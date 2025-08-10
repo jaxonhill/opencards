@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${instrumentSans.variable} antialiased`}>{children}</body>
+            <body className={`${instrumentSans.variable} bg-neutral-950 antialiased`}>{children}</body>
         </html>
     );
 }
