@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { GalleryHorizontalEnd, Home, Plus } from "lucide-react";
+import { Logo } from "./logo";
 
 type Page = {
     label: string;
@@ -27,12 +28,17 @@ const PAGES: Page[] = [
 
 export function Sidebar() {
     return (
-        <aside className="p-2 bg-neutral-950 h-screen">
-            <ul className="bg-neutral-900 w-[288px] px-4 py-6 rounded-lg border border-neutral-800 h-full space-y-1">
-                {PAGES.map((page, i) => (
-                    <SidebarButton key={page.label} {...page} isSelected={i === 0} />
-                ))}
-            </ul>
+        <aside className="p-2 bg-neutral-950 h-screen w-fit">
+            <section className="h-full bg-neutral-900 py-6 w-[288px] border border-neutral-800 rounded-lg">
+                <div className="px-6">
+                    <Logo />
+                </div>
+                <ul className="bg-neutral-900 px-4 pt-8 h-full space-y-1">
+                    {PAGES.map((page, i) => (
+                        <SidebarButton key={page.label} {...page} isSelected={i === 0} />
+                    ))}
+                </ul>
+            </section>
         </aside>
     );
 }
