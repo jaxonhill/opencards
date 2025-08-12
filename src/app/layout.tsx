@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Sans } from "next/font/google";
+import { Instrument_Sans } from "next/font/google";
 import "./globals.css";
+import { Sidebar } from "@/components/sidebar";
 
 const instrumentSans = Instrument_Sans({
     variable: "--font-instrument-sans",
@@ -14,7 +14,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${instrumentSans.variable} bg-neutral-950 antialiased`}>{children}</body>
+            <body className={`${instrumentSans.variable} bg-neutral-950 antialiased`}>
+                <Sidebar />
+                <main className="pl-[19.5rem] w-full h-screen">{children}</main>
+            </body>
         </html>
     );
 }
