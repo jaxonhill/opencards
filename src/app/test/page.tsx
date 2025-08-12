@@ -18,6 +18,41 @@ function SkeletonLines() {
     );
 }
 
+interface CardItemProps {
+    zIndex: number;
+    isSkeletonVisible: boolean;
+}
+
+function CardItem({ zIndex, isSkeletonVisible }: CardItemProps) {
+    return (
+        <li
+            className="w-full rounded-lg bg-neutral-900 border border-neutral-800 h-64 flex flex-col justify-center gap-2.5 relative shadow-lg py-8 px-6"
+            style={{ zIndex: zIndex }}
+        >
+            {isSkeletonVisible && <SkeletonLines />}
+        </li>
+    );
+}
+
+// prettier-ignore
+function CardStack() {
+    const topZIndex: number = Math.max(...CARD_Z_INDEXES);
+
+    return (
+        <ul className="-space-y-[244px] list-none m-0 p-0">
+            {CARD_Z_INDEXES.map((zIndex) => {
+                return (
+                    <CardItem
+                        key={zIndex}
+                        zIndex={zIndex}
+                        isSkeletonVisible={zIndex === topZIndex}
+                    />
+                );
+            })}
+        </ul>
+    );
+}
+
 export default function TestPage() {
     return (
         <div className="flex flex-col h-full w-full justify-center items-center">
