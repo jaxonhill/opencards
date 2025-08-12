@@ -28,7 +28,7 @@ const PAGES: Page[] = [
 
 export function Sidebar() {
     return (
-        <aside className="p-2 bg-neutral-950 h-screen w-fit">
+        <aside className="p-2 bg-neutral-950 h-screen w-fit fixed">
             <section className="h-full bg-neutral-900 py-6 w-[288px] border border-neutral-800 rounded-lg">
                 <div className="px-6">
                     <Logo />
