@@ -1,4 +1,4 @@
-import { useAnimate, stagger } from "motion/react";
+import { stagger } from "motion/react";
 import {
     BETWEEN_LINE_STAGGER_TIME,
     LINE_FINAL_OPACITY,
@@ -9,10 +9,9 @@ import {
     SINGLE_LINE_ANIMATION_TIME,
     START_INITIAL_ANIMATION_DELAY_TIME,
 } from "../constants/drawing-lines";
+import { AnimateFn } from "../types/types";
 
-type AnimateFn = ReturnType<typeof useAnimate>[1]; // the animate function
-
-export async function drawLinesOnTopCard(animate: AnimateFn) {
+export async function drawLinesOnTopCard(animate: AnimateFn): Promise<void> {
     // Set initial lengths and opacity to lines
     await animate(
         LINES_CSS_SELECTOR,
