@@ -1,6 +1,6 @@
 import { TOP_CARD_CSS_SELECTOR } from "./common";
 
-export const SINGLE_LINE_ANIMATION_TIME: number = 0.3; // seconds
+export const SINGLE_LINE_ANIMATION_TIME: number = 0.2; // seconds
 export const BETWEEN_LINE_STAGGER_TIME: number = 0.1; // seconds
 export const START_INITIAL_ANIMATION_DELAY_TIME: number = 0; // seconds
 
