@@ -1,11 +1,6 @@
-import { Instrument_Sans } from "next/font/google";
+import { instrumentSans } from "@/config/fonts";
 import "./globals.css";
 import { Sidebar } from "@/components/sidebar";
-
-const instrumentSans = Instrument_Sans({
-    variable: "--font-instrument-sans",
-    subsets: ["latin"],
-});
 
 export default function RootLayout({
     children,
@@ -14,7 +9,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${instrumentSans.variable} bg-neutral-950 antialiased`}>
+            <body className={`${instrumentSans.className} bg-neutral-950 antialiased`}>
                 <Sidebar />
                 <main className="pl-[19rem] w-full h-screen">{children}</main>
             </body>
