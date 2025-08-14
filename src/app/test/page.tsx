@@ -1,5 +1,5 @@
-import { GenerateCardsPage } from "@/features/generating-cards/components/_generate-cards-page";
+import { ChatConversationContainer } from "@/features/chat/components/chat-conversation-container";
 
 export default function TestPage() {
-    return <GenerateCardsPage />;
+    return <ChatConversationContainer />;
 }

@@ -16,7 +16,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${instrumentSans.variable} bg-neutral-950 antialiased`}>
                 <Sidebar />
-                <main className="pl-[19.5rem] w-full h-screen">{children}</main>
+                <main className="pl-[19rem] w-full h-screen">{children}</main>
             </body>
         </html>
     );

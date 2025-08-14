@@ -33,7 +33,7 @@ export function Sidebar() {
                 <div className="px-6">
                     <Logo />
                 </div>
-                <ul className="bg-neutral-900 px-4 pt-8 h-full space-y-1">
+                <ul className="bg-neutral-900 px-4 pt-8 space-y-1">
                     {PAGES.map((page, i) => (
                         <SidebarButton key={page.label} {...page} isSelected={i === 0} />
                     ))}
