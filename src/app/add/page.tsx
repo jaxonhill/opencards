@@ -10,7 +10,7 @@ export default function AddCardsPage() {
 
     return (
         <div className="flex flex-col h-full w-full justify-center items-center">
-            <div className="flex flex-col gap-4 w-[640px] pb-16">
+            <div className="flex flex-col gap-4 w-[640px] pb-24">
                 <DirectionsHeading />
                 <div className="rounded-lg h-64 overflow-hidden border border-neutral-800 bg-neutral-900">
                     <textarea

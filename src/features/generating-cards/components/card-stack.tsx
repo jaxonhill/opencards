@@ -1,16 +1,18 @@
 import { CardItem } from "./card-item";
 
-const CARD_Z_INDEXES = [50, 40, 30] as const;
+interface CardStackProps {
+    cards: { id: number }[];
+}
 
 // prettier-ignore
-export function CardStack() {
+export function CardStack({ cards }: CardStackProps) {
     return (
         <ul className="-space-y-[244px] list-none m-0 p-0">
-            {CARD_Z_INDEXES.map((zIndex, index) => {
+            {cards.map((card, index) => {
                 return (
                     <CardItem
-                        key={zIndex}
-                        zIndex={zIndex}
+                        key={card.id}
+                        zIndex={-index}
                         cardIndex={index}
                     />
                 );
