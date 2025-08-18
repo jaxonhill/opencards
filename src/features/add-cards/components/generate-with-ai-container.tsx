@@ -2,10 +2,17 @@ import { WandSparkles } from "lucide-react";
 import { FileUpload } from "./file-upload";
 import { PasteTextbox } from "./paste-textbox";
 import { Button } from "@/components/button";
+import { motion } from "motion/react";
 
 export function GenerateWithAIContainer() {
     return (
-        <div className="w-full px-10 pt-11 pb-10 flex flex-col gap-8 bg-neutral-900 rounded-lg border border-neutral-800">
+        <motion.div
+            initial={{ opacity: 0, y: -40, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ type: "spring", stiffness: 320, damping: 24 }}
+            style={{ originY: 0 }}
+            className="w-full px-10 pt-11 pb-10 flex flex-col gap-8 bg-neutral-900 rounded-lg border border-neutral-800"
+        >
             <h1 className="font-medium text-xl text-neutral-100">Generate with AI</h1>
             <div className="flex gap-5 items-center">
                 <FileUpload />
@@ -18,6 +25,6 @@ export function GenerateWithAIContainer() {
                     Start Generating
                 </Button>
             </div>
-        </div>
+        </motion.div>
     );
 }
