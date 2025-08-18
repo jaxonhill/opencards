@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type ButtonProps = {
-    variant: "default" | "secondary";
+    variant?: "default" | "secondary";
 } & React.ComponentProps<"button">;
 
 export function Button({ variant = "default", ...props }: ButtonProps) {
