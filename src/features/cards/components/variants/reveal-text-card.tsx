@@ -8,9 +8,19 @@ interface RevealTextCardProps {
 export function RevealTextCard({ mode }: RevealTextCardProps) {
     switch (mode) {
         case CARD_MODE.EDIT:
-            return <div></div>;
+            return (
+                <CardFrame>
+                    <div>Reveal Card editing</div>
+                </CardFrame>
+            );
         case CARD_MODE.VIEW:
-            return <div></div>;
+            return (
+                <div>
+                    <CardFrame>
+                        <div>Reveal Card view</div>
+                    </CardFrame>
+                </div>
+            );
         default:
             throw new Error(`Card mode "${mode}" does not exist.`);
     }
