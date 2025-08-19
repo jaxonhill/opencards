@@ -7,9 +7,10 @@ import { motion } from "motion/react";
 export function GenerateWithAIContainer() {
     return (
         <motion.div
-            initial={{ opacity: 0, y: -40, scale: 0.5 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ type: "spring", stiffness: 320, damping: 24 }}
+            layout
+            initial={{ opacity: 0, y: "-30%", scaleY: 0.5 }}
+            animate={{ opacity: 1, y: 0, scaleY: 1 }}
+            transition={{ type: "spring", visualDuration: 0.25, bounce: 0.2 }}
             className="w-full px-16 pt-16 pb-12 flex flex-col gap-8 bg-neutral-900 rounded-lg border border-neutral-800"
         >
             <h1 className="font-medium text-xl text-neutral-100">Generate with AI</h1>
