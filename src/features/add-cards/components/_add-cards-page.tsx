@@ -3,14 +3,20 @@
 import { ActionsBar } from "./actions-bar";
 import { GenerateWithAIContainer } from "./generate-with-ai-container";
 import { Button } from "@/components/button";
-import { CardVariant } from "@/features/cards/types/types";
+import { CARD_VARIANT } from "@/features/cards/types/types";
 import { CardSection } from "./card-section";
 
 import { useState } from "react";
 import { LayoutGroup, motion } from "motion/react";
 import { Plus, WandSparkles } from "lucide-react";
 
-const DEFAULT_CARDS: CardVariant[] = ["Front & Back", "Front & Back", "Front & Back", "Front & Back", "Front & Back"];
+const DEFAULT_CARDS: CARD_VARIANT[] = [
+    CARD_VARIANT.FRONT_BACK,
+    CARD_VARIANT.FRONT_BACK,
+    CARD_VARIANT.FRONT_BACK,
+    CARD_VARIANT.FRONT_BACK,
+    CARD_VARIANT.FRONT_BACK,
+];
 
 export function AddCardsPage() {
     const [wantsToAIGenerate, setWantsToAIGenerate] = useState<boolean>(false);

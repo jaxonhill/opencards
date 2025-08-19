@@ -1,15 +1,19 @@
-import { CardMode } from "../../types/types";
+import { CARD_MODE } from "../../types/types";
 import { CardFrame } from "../card-frame";
 
 interface FrontBackCardProps {
-    mode: CardMode;
+    mode: CARD_MODE;
 }
 
 export function FrontBackCard({ mode }: FrontBackCardProps) {
     switch (mode) {
-        case "edit":
-            return <div></div>;
-        case "view":
+        case CARD_MODE.EDIT:
+            return (
+                <CardFrame>
+                    <div></div>
+                </CardFrame>
+            );
+        case CARD_MODE.VIEW:
             return <div></div>;
         default:
             throw new Error(`Card mode "${mode}" does not exist.`);

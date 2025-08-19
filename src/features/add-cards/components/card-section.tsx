@@ -1,15 +1,15 @@
 import { CardRenderer } from "@/features/cards/components/card-renderer";
-import { CardVariant } from "@/features/cards/types/types";
-import { Copy } from "lucide-react";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/select";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/tooltip";
-import { forwardRef } from "react";
+import { CARD_MODE, CARD_VARIANT } from "@/features/cards/types/types";
+import { CARD_VARIANT_OPTIONS } from "@/features/cards/config/constants";
 
-const CARD_VARIANTS: CardVariant[] = ["Front & Back", "Reveal Text"];
+import { Copy } from "lucide-react";
+import { forwardRef } from "react";
 
 interface CardSectionProps {
     cardNumber: number;
-    variant: CardVariant;
+    variant: CARD_VARIANT;
 }
 
 export function CardSection({ cardNumber, variant }: CardSectionProps) {
@@ -28,12 +28,12 @@ export function CardSection({ cardNumber, variant }: CardSectionProps) {
                             <p>Clone card</p>
                         </TooltipContent>
                     </Tooltip>
-                    <Select defaultValue={CARD_VARIANTS[0]}>
+                    <Select defaultValue={CARD_VARIANT.FRONT_BACK}>
                         <SelectTrigger className="w-32 h-8">
                             <SelectValue placeholder="Card Type" />
                         </SelectTrigger>
                         <SelectContent>
-                            {CARD_VARIANTS.map((variant) => {
+                            {CARD_VARIANT_OPTIONS.map((variant) => {
                                 return (
                                     <SelectItem key={variant} value={variant}>
                                         {variant}
@@ -45,7 +45,7 @@ export function CardSection({ cardNumber, variant }: CardSectionProps) {
                 </div>
             </div>
             <div className="w-full flex gap-4">
-                <CardRenderer variant={variant} mode="edit" />
+                <CardRenderer variant={variant} mode={CARD_MODE.EDIT} />
             </div>
         </section>
     );
