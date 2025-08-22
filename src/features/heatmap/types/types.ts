@@ -1,20 +1,3 @@
-export type HeatmapCellData = {
-    date: string;
-    numCardsStudied: number;
-    numCardsRecommended: number;
-};
-
-export type HeatmapMonthData = {
-    month: MONTHS;
-    startCol: number;
-    endCol: number;
-};
-
-export type HeatMapDisplayData = {
-    months: HeatmapMonthData[];
-    cells: HeatmapCellData[];
-};
-
 export enum MONTHS {
     JAN = "Jan",
     FEB = "Feb",
@@ -29,3 +12,28 @@ export enum MONTHS {
     NOV = "Nov",
     DEC = "Dec",
 }
+
+export enum DAY_GRADE {
+    NONE = "bg-neutral-800",
+    OK = "bg-emerald-900",
+    GOOD = "bg-emerald-700",
+    GREAT = "bg-emerald-400",
+    PERFECT = "bg-emerald-100",
+}
+
+export type HeatmapCellData = {
+    date: string;
+    numCardsStudied: number;
+    numCardsRecommended: number;
+    dayGrade: DAY_GRADE;
+};
+
+export type HeatmapMonthData = {
+    month: MONTHS;
+    startCol: number;
+};
+
+export type HeatMapDisplayData = {
+    months: HeatmapMonthData[];
+    cells: HeatmapCellData[];
+};
