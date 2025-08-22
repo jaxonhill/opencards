@@ -33,7 +33,7 @@ export type HeatmapMonthData = {
     startCol: number;
 };
 
-export type HeatMapDisplayData = {
+export type HeatmapDisplayData = {
     months: HeatmapMonthData[];
     cells: HeatmapCellData[];
 };

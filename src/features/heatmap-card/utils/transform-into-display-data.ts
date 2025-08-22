@@ -1,11 +1,11 @@
-import { HeatmapCellData, HeatMapDisplayData, MONTHS } from "../types/types";
+import { HeatmapCellData, HeatmapDisplayData, MONTHS } from "../types/types";
 
 const months: MONTHS[] = Object.values(MONTHS);
 
-export function transformIntoDisplayData(rawHeatmapCellData: HeatmapCellData[]): HeatMapDisplayData {
+export function transformIntoDisplayData(rawHeatmapCellData: HeatmapCellData[]): HeatmapDisplayData {
     let currentColumn: number = 1;
     let currentMonthIndex: number = -1;
-    let finalData: HeatMapDisplayData = { months: [], cells: [] };
+    let finalData: HeatmapDisplayData = { months: [], cells: [] };
 
     for (let i = 0; i < rawHeatmapCellData.length; i++) {
         const isNewColumn: boolean = (i + 1) % 7 === 0;
