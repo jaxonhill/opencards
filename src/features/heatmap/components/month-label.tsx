@@ -7,7 +7,7 @@ interface HeatmapMonthLabel {
 export function HeatmapMonthLabel({ label, startCol, endCol }: HeatmapMonthLabel) {
     return (
         <div
-            className={`text-neutral-700 text-xs font-normal row-span-1`}
+            className={`text-neutral-600 text-xs font-normal row-span-1`}
             style={{
                 gridColumnStart: startCol,
                 gridColumnEnd: endCol,

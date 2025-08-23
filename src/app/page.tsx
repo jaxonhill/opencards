@@ -12,7 +12,7 @@ export default function Home() {
 
     return (
         <main className="grid gap-3 grid-cols-12 grid-rows-2 pl-[184px] pr-48 pt-28">
-            <StartReviewCard className="text-white col-span-5" />
+            <StartReviewCard numCardsToReview={54} numStreakDays={14} className="text-white col-span-5" />
             <HeatmapCard className="col-span-7" data={heatmapDisplayData} />
             <DecksCard className="col-span-7" />
             <AchievementsCard className="col-span-5" />
