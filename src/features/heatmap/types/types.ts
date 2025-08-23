@@ -17,8 +17,7 @@ export enum DAY_GRADE {
     NONE = "bg-neutral-800",
     OK = "bg-emerald-900",
     GOOD = "bg-emerald-700",
-    GREAT = "bg-emerald-400",
-    PERFECT = "bg-emerald-100",
+    PERFECT = "bg-emerald-400",
 }
 
 export type HeatmapCellData = {

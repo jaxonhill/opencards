@@ -51,7 +51,6 @@ function computeDayGrade(studied: number, recommended: number): DAY_GRADE {
     const ratio = recommended > 0 ? studied / recommended : studied > 0 ? 1 : 0;
 
     if (ratio >= 1.0) return DAY_GRADE.PERFECT; // hit or exceeded target
-    if (ratio >= 0.9) return DAY_GRADE.GREAT; // nearly there
     if (ratio >= 0.6) return DAY_GRADE.GOOD; // solid progress
     if (ratio >= 0.25) return DAY_GRADE.OK; // some progress
     return DAY_GRADE.NONE; // effectively blank
