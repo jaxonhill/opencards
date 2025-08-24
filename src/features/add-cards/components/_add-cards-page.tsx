@@ -18,6 +18,9 @@ const DEFAULT_CARDS: CARD_VARIANT[] = [
     CARD_VARIANT.FRONT_BACK,
 ];
 
+export const GEN_WITH_AI_ANIMATION_SECONDS: number = 0.4;
+export const GEN_WITH_AI_BOUNCE: number = 0.18;
+
 export function AddCardsPage() {
     const [wantsToAIGenerate, setWantsToAIGenerate] = useState<boolean>(false);
 
@@ -40,7 +43,11 @@ export function AddCardsPage() {
                 <motion.div
                     layout
                     className="flex flex-col gap-11 pt-11"
-                    transition={{ ease: "easeOut", duration: 0.2 }}
+                    transition={{
+                        type: "spring",
+                        visualDuration: GEN_WITH_AI_ANIMATION_SECONDS,
+                        bounce: GEN_WITH_AI_BOUNCE,
+                    }}
                 >
                     {DEFAULT_CARDS.map((card, i) => {
                         return <CardSection key={i} cardNumber={i + 1} variant={card} />;

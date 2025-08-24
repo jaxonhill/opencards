@@ -3,15 +3,17 @@ import { FileUpload } from "./file-upload";
 import { PasteTextbox } from "./paste-textbox";
 import { Button } from "@/components/button";
 import { motion } from "motion/react";
+import { GEN_WITH_AI_ANIMATION_SECONDS, GEN_WITH_AI_BOUNCE } from "./_add-cards-page";
 
 export function GenerateWithAIContainer() {
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, y: "-30%", scaleY: 0.5 }}
-            animate={{ opacity: 1, y: 0, scaleY: 1 }}
-            transition={{ type: "spring", visualDuration: 0.25, bounce: 0.2 }}
+            initial={{ opacity: 0, scale: 0.3 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ type: "spring", visualDuration: GEN_WITH_AI_ANIMATION_SECONDS, bounce: GEN_WITH_AI_BOUNCE }}
             className="w-full px-16 pt-16 pb-12 flex flex-col gap-8 bg-neutral-900 rounded-lg border border-neutral-800"
+            style={{ transformOrigin: "top" }}
         >
             <h1 className="font-medium text-xl text-neutral-100">Generate with AI</h1>
             <div className="flex gap-5 items-center">
