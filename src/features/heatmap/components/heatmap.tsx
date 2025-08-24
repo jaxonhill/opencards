@@ -11,7 +11,7 @@ export function Heatmap({ data }: HeatmapProps) {
 
     return (
         <div
-            className={`grid gap-0.5 w-max grid-cols-[repeat(${numCols},_12px)] grid-flow-col grid-rows-[16px_repeat(7,_12px)]`}
+            className={`grid gap-0.5 w-max grid-cols-[repeat(${numCols},_12px)] grid-flow-col grid-rows-[18px_repeat(7,_12px)]`}
         >
             {data.months.map((month, i) => {
                 const isLastMonth: boolean = i === data.months.length - 1;
