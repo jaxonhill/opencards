@@ -22,14 +22,14 @@ export const GEN_WITH_AI_ANIMATION_SECONDS: number = 0.4;
 export const GEN_WITH_AI_BOUNCE: number = 0.18;
 
 export function AddCardsPage() {
-    const [wantsToAIGenerate, setWantsToAIGenerate] = useState<boolean>(false);
+    const [isAIGenOpen, setIsAIGenOpen] = useState<boolean>(false);
 
     return (
         <main className="w-6xl">
             <LayoutGroup>
                 <ActionsBar>
                     <>
-                        <Button onClick={() => setWantsToAIGenerate(true)} variant="secondary">
+                        <Button onClick={() => setIsAIGenOpen(true)} variant="secondary">
                             <WandSparkles />
                             Generate with AI
                         </Button>
@@ -39,7 +39,7 @@ export function AddCardsPage() {
                         </Button>
                     </>
                 </ActionsBar>
-                {wantsToAIGenerate && <GenerateWithAIContainer />}
+                {isAIGenOpen && <GenerateWithAIContainer onClose={() => setIsAIGenOpen(false)} />}
                 <motion.div
                     layout
                     className="flex flex-col gap-11 pt-11"
